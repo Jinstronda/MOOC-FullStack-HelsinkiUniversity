@@ -1,14 +1,20 @@
-const Persons = ({ list }) => {
+import backEnd from "../services/backend.js"
+const Persons = ({ list, removeFunction}) => {
     return (
       <ul>
         {list.map(person => (
-          <li key={person.key}>
-            Name: {person.name} Number: {person.number}
+          <li key={person.id}> 
+            Name: {person.name} Number: {person.number} <button onClick= {() => removeFunction(person.id)}>Delete</button>
           </li>
         ))}
       </ul>
     );
   };
+  
+  
+  
+
+
   
   export default Persons;
   
