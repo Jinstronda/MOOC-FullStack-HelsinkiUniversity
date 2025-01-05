@@ -14,10 +14,13 @@ const create = (newObject) => {
     return request.then(response=>response.data)
 }
 
-const update = ({id,newObject}) => {
-    const request = axios.put(`${baseUrl}/${id}`, newObject) // Substitui tudo com o id pelo novo objeto
-    return request.then(response => response.data)
-}
+const update = (id, updatedObject) => {
+    console.log("backend id received", id)
+    const request = axios.put(`${baseUrl}/${id}`, updatedObject);
+    return request.then((response) => response.data);
+  };
+  
+  
 
 const remove = (id) => {
     console.log(id)
